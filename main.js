@@ -62,7 +62,7 @@ $(document).ready(function () {
   shuffle(cards);
   setCards();
 
-  $(document).on('click touch', '.playBtn', function() {
+  $(document).on('click touchstart', '.playBtn', function() {
     canPlay = true;
     $(this).remove();
     $("#btmContainer").append(progressBar);
@@ -79,7 +79,7 @@ $(document).ready(function () {
     }, timeLimit + 1000);
   });
 
-  $(document).on('click touch', '.card', function () {
+  $(document).on('click touchstart', '.card', function () {
     !canPlay ? messageUser("Click the play button.", facePalmGif) : null;
     let card = $(this);
     let cardValue = card.find(".back").css("background-image");
@@ -113,7 +113,7 @@ $(document).ready(function () {
     }
   });
 
-  $(document).on('click touch', '.closeBtn', function () {
+  $(document).on('click touchstart', '.closeBtn', function () {
     $("#overlay").remove();
   });
 
