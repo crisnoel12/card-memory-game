@@ -1,0 +1,179 @@
+/* General CSS */
+body{
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+  text-align: center;
+  background-color: #333;
+  font-family: "Montserrat";
+  color: white;
+}
+h1 {
+  font-size: 1.5em;
+  letter-spacing: .2em;
+}
+h1, .playBtn {
+  font-family: "Righteous";
+}
+#overlay, .message {
+  position: absolute;
+}
+.playBtn, .progressBar, .board {
+  background-color: #8e44ad;
+}
+.card:hover, .playBtn:hover, .closeBtn:hover {
+  cursor: pointer;
+}
+
+/* Overlay Section */
+#overlay {
+  background-color: rgba(0,0,0,.7);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.closeBtn {
+  float: right;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, .5);
+  font-size: 2em;
+}
+.message {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  background-color: #2980b9;
+  letter-spacing: .2em;
+}
+.message img {
+  height: 65%;
+  width: 100%;
+  max-height: 551.600px;
+}
+.message p {
+  margin-top: 10px;
+  font-size: .8em;
+}
+
+/* Bottom Container Section */
+#btmContainer {
+    width: 90%;
+    margin: 0 auto;
+}
+.playBtn {
+  color: white;
+  border: none;
+  width: 100%;
+  margin-top: 30px;
+  letter-spacing: .5em;
+  height: 30px;
+}
+.progressContainer {
+  margin-top: 30px;
+  border: 5px solid #8e44ad;
+  background-color: #333;
+}
+.progressBar {
+  width: 0%;
+  transition: width 1s linear;
+  height: 20px;
+}
+
+/* Board Section */
+.board {
+  height: 400px;
+  padding: 5px;
+  padding-top: 15px;
+  text-align: center;
+}
+.card {
+  width: 20%;
+  height: 90px;
+  margin: 2px;
+  display: inline-block;
+  perspective: 700px;
+  -webkit-transition: -webkit-transform 0.6s;
+  -moz-transition: -moz-transform 0.6s;
+  -o-transition: -o-transform 0.6s;
+  transition: transform 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.card.flipped {
+  -webkit-transform: rotateY( 180deg);
+  -moz-transform: rotateY( 180deg);
+  -o-transform: rotateY( 180deg);
+  transform: rotateY( 180deg);
+}
+.front {
+  background-color: ivory;
+  background-image: url("images/logo.png");
+  background-repeat: no-repeat;
+  background-size: 35px;
+  background-position: center;
+}
+.back{
+  background-color: white;
+  color: black;
+  -webkit-transform: rotateY( 180deg);
+  -moz-transform: rotateY( 180deg);
+  -o-transform: rotateY( 180deg);
+  transform: rotateY( 180deg);
+}
+.front, .back{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+/* Media Queries */
+@media screen and (min-height: 600px) {
+  .board{
+    height: 450px;
+  }
+  .card{
+    height: 100px;
+  }
+  .playBtn {
+    height: 50px;
+    font-size: 1.4em;
+  }
+  .progressBar {
+    height: 40px;
+  }
+}
+@media screen and (min-width: 768px){
+  h1 {
+    font-size: 2.5em;
+  }
+  .board{
+    height: 700px;
+  }
+  .card {
+    height: 23%;
+  }
+  #btmContainer{
+    width: 82%;
+  }
+  .message p {
+    font-size: 1.2em;
+  }
+}
+@media screen and (min-width: 992px) {
+  .board {
+    height: 480px;
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  #btmContainer {
+    width: 50%;
+  }
+}
